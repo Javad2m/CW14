@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>CW14</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="/submit">
+        <label for="fullName">نام کامل:</label>
+        <br />
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="نام کامل خود را وارد کنید"
+          required
+        />
+        <br />
+        <br />
+        <br />
+        <label for="email">ایمیل:</label>
+        <br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="ایمیل خود را وارد کنید"
+          required
+        />
+        <br />
+        <br />
+        <br />
+        <label for="password">رمز عبور:</label>
+        <br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="رمز عبور خود را وارد کنید"
+          required
+        />
+        <br />
+        <br />
+        <br />
+
+        <label for="password">تایید رمز عبور:</label>
+        <br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="رمز عبور خود را مجددا وارد کنید"
+          required
+        />
+
+        <br />
+        <br />
+        <br />
+
+        <label for="phone">شماره تماس:</label>
+        <br />
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="شماره تماس خود را وارد کنید"
+          required
+        />
+
+        <br />
+        <br />
+        <br />
+        <label for="gender">جنسیت:</label>
+        <input type="radio" id="male" name="gender" value="male" required />
+        <label for="male">مرد</label>
+        <input type="radio" id="female" name="gender" value="female" required />
+        <label for="female">زن</label>
+        <br />
+        <br />
+        <br />
+
+        <label for="city">شهر:</label>
+        <select id="city" name="city" required>
+          <option value="" disabled selected hidden>انتخاب کنید</option>
+          <option value="tehran">تهران</option>
+          <option value="esfahan">اصفهان</option>
+          <option value="mashhad">مشهد</option>
+          <option value="shiraz">شیراز</option>
+          <option value="tabriz">تبریز</option>
+          <option value="kerman">کرمان</option>
+          <option value="yazd">یزد</option>
+          <option value="ahvaz">اهواز</option>
+          <option value="karaj">کرج</option>
+          <option value="kermanshah">کرمانشاه</option>
+          <option value="hamedan">همدان</option>
+        </select>
+
+        <br />
+        <br />
+        <br />
+
+        <label for="date">تاریخ:</label>
+        <br />
+        <input type="date" id="date" name="date" required />
+
+        <br />
+        <br />
+        <br />
+        <label for="favariot">علاقه‌مندی‌ها:</label>
+        <br />
+        <label for="sports">ورزش</label>
+        <input type="checkbox" id="sports" name="interests" value="sports" />
+        <br />
+        <label for="music">موسیقی</label>
+        <input type="checkbox" id="music" name="interests" value="music" />
+        <br />
+        <label for="reading">مطالعه</label>
+        <input type="checkbox" id="reading" name="interests" value="reading" />
+        <br />
+        <label for="travelling">سفر</label>
+        <input
+          type="checkbox"
+          id="travelling"
+          name="interests"
+          value="travelling"
+        />
+        <br />
+        <br />
+        <br />
+        <label for="profilePic">تصویر پروفایل:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" />
+        <img
+          id="profilePicc"
+          alt="profilePic"
+          style="
+            max-width: 100px;
+            max-height: 100;
+            display: none;
+            border-radius: 20px;
+            border: 2px solid black;
+          "
+        />
+        <script>
+          const input = document.getElementById("profilePic");
+          const img = document.getElementById("profilePicc");
+
+          input.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+              img.src = URL.createObjectURL(file);
+              img.style.display = "block";
+            }
+          });
+        </script>
+        <br />
+        <br />
+        <br />
+        <label for="additionalInfo">توضیحات اضافی:</label>
+        <br />
+
+        <textarea
+          id="additionalInfo"
+          name="additionalInfo"
+          rows="4"
+          cols="50"
+        ></textarea>
+
+        <br />
+        <br />
+        <br />
+
+        <button type="submit" class="rounded-button">ارسال</button>
+        <button type="reset" class="rounded-button">پاک کردن</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="st.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>User Registration Form</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="gender" value="male" required />
+              Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="female" required />
+              Female</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <select id="city" name="city" required>
+            <option value="" disabled selected>Select your city</option>
+            <option value="New York">New York</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Houston">Houston</option>
+            <option value="Phoenix">Phoenix</option>
+            <option value="Philadelphia">Philadelphia</option>
+            <option value="San Antonio">San Antonio</option>
+            <option value="San Diego">San Diego</option>
+            <option value="Dallas">Dallas</option>
+            <option value="San Jose">San Jose</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+        <div class="form-group">
+          <label>Interests:</label>
+          <div class="checkbox-group">
+            <label
+              ><input type="checkbox" name="interests" value="sports" />
+              Sports</label
+            >
+            <label
+              ><input type="checkbox" name="interests" value="music" />
+              Music</label
+            >
+            <label
+              ><input type="checkbox" name="interests" value="traveling" />
+              Traveling</label
+            >
+            <label
+              ><input type="checkbox" name="interests" value="reading" />
+              Reading</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="profile-picture">Profile Picture:</label>
+          <input
+            type="file"
+            id="profile-picture"
+            name="profile-picture"
+            accept="image/*"
+          />
+        </div>
+        <div class="form-group">
+          <label for="additional-info">Additional Information:</label>
+          <textarea
+            id="additional-info"
+            name="additional-info"
+            rows="4"
+            placeholder="Enter additional information"
+          ></textarea>
+        </div>
+        <div class="form-buttons">
+          <button type="submit" class="submit-btn">Submit</button>
+          <button type="reset" class="reset-btn">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html> -->
